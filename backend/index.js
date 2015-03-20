@@ -26,6 +26,8 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(errorHandler()); // Error handler - has to be last
 
+// Routing
+app.use('/trips', require('./trips.js'));
 
 // Routing
 //app.use('/articles', require('./article.js'));
