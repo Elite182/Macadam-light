@@ -12,11 +12,15 @@ router.delete('/:id', destroy);
 
 // Init model
 var trips = [{
-    "_id": 0,
-    "url": "http://tympanus.net/Development/CreativeGooeyEffects/index.html",
-    "title": "Gooey Effects on Chat App - Very nice !",
-    "description": "A demo chat app with Gooey effect",
-    "tags": ["chat", "demo", "mobile"]
+    _id: 0,
+    title: "JCC",
+    description: "A JCC production !",
+    participants: [ "julien", "clément", "cédric", "clément" ],
+    center: { latitude: 120.0, longitude: 120.0 },
+    zoom: 10,
+    markers: [
+        { latitude: 120.0, longitude: 120.0 }
+    ]
 }];
 var nextId = trips.length;
 
