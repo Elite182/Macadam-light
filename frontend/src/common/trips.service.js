@@ -15,6 +15,7 @@
 
         var factory = {
             search: search,
+            getByID: getByID,
             add: add,
             removeById: removeById
         };
@@ -39,6 +40,14 @@
             return $http
                 .get(BASE_URL, config)
                 .then(function(response) {
+                    return response.data;
+                });
+        }
+
+        function getByID(tripID) {
+            return $http
+                .get(BASE_URL + '/' + tripID)
+                .then(function (response) {
                     return response.data;
                 });
         }

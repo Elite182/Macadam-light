@@ -10,7 +10,9 @@
     angular
         .module('myApp', [
             'ui.router',
-            'ngMessages'
+            'ngMessages',
+            'ngHolder',
+            'textAngular'
         ])
         .config(Config);
 
