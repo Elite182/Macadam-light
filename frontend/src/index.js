@@ -14,7 +14,8 @@
         ])
         .config(Config);
 
-    function Config() {
+    function Config($urlRouterProvider) {
+    	
     }
 
 })();

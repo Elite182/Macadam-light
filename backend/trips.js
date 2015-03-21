@@ -64,7 +64,7 @@ function create(req, res) {
 
     trips.push(newtrip);
 
-    return res.json(201, newatrip);
+    return res.json(201, newtrip);
 };
 
 
