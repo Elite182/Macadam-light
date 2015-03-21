@@ -6,6 +6,7 @@ var express = require('express');
 // Routing
 var router = express.Router();
 router.get('/', search);
+router.get('/:id', getByID);
 router.post('/', create);
 router.delete('/:id', destroy);
 
@@ -15,7 +16,10 @@ var trips = [{
     _id: 0,
     title: "JCC",
     description: "A JCC production !",
-    participants: [ "julien", "clément", "cédric", "clément" ],
+    location: "Ile-de-France",
+    date: "2015-03-20",
+    time: "15:00",
+    participants: [ "julien", "clément F", "cédric", "clément N" ],
     center: { latitude: 120.0, longitude: 120.0 },
     zoom: 10,
     markers: [
@@ -51,7 +55,22 @@ function search(req, res) {
         filtered = trips;
     }
 
+    console.log("GET /trips " + filter.length + " results")
     return res.json(200, filtered);
+};
+
+function getByID(req, res) {
+    var _id = parseInt(req.params.id);
+
+    if (_id < 0 || _id >= trips.length) {
+        console.log("GET /trips/:id id=" + _id + " -> 404");
+        return res.send(404);
+    }
+
+    var trip = trips[_id];
+
+    console.log("GET /trips/:id id=" + _id + " -> 200");
+    return res.json(200, trip);
 };
 
 
@@ -64,6 +83,7 @@ function create(req, res) {
 
     trips.push(newtrip);
 
+    console.log("POST /trips -> 201 " + newTrips);
     return res.json(201, newtrip);
 };
 
@@ -78,9 +98,11 @@ function destroy(req, res) {
         if (_id === trip._id) {
             trips.splice(i, 1);
 
+            console.log("DELETE /trips/:id id=" + _id + " -> 204");
             return res.send(204);
         }
     }
 
+    console.log("DELETE /trips/:id id=" + _id + " -> 404");
     return res.send(404);
 };
