@@ -1,0 +1,27 @@
+/* Editor styling */
+
+
+.trips-new-description {
+	.ta-toolbar {
+		
+		padding: 10px 10px 5px;
+		margin: 10px 0px; /* Override bootstrap */
+		
+		background-color: #F0F0F0;
+
+		border: 1px solid #EEE;
+
+		.btn-group {
+			margin-bottom: 5px;
+		}
+	}
+
+	.ta-editor {
+		padding: 10px;
+		
+		background-color: #FFF;
+		
+		border: 1px solid #EEE;
+	}
+}
+	

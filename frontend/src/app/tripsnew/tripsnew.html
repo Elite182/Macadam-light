@@ -1,0 +1,73 @@
+<div class="container trips-new">
+	
+	<h1>Create a new trip</h1>
+
+	<form name="newTrip" ng-submit="send()" novalidate>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group" ng-class="{'has-error': !newTrip.title.$valid && newTrip.title.$dirty}">
+					<label for="title">Title</label>
+					<input type="text" name="title" ng-model="trip.title" 
+						class="form-control" placeholder="Title of your trip" required />
+					<span class="help-block" ng-messages="newTrip.title.$error" 
+						ng-show="!newTrip.title.$valid && newTrip.title.$dirty">
+						<span ng-message="required">Title is required</span>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group" ng-class="{'has-error': !newTrip.location.$valid && newTrip.location.$dirty}">
+					<label for="location">Location</label>
+					<input type="text" name="location" ng-model="trip.location" 
+						class="form-control" placeholder="Location of your trip" required />
+					<span class="help-block" ng-messages="newTrip.location.$error"
+						ng-show="!newTrip.location.$valid && newTrip.location.$dirty">
+						<span ng-message="required">Location is required</span>
+					</span>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group" ng-class="{'has-error': !newTrip.date.$valid && newTrip.date.$dirty}">
+					<label for="date">Date</label>
+					<input type="date" name="date" ng-model="trip.date" 
+						class="form-control" placeholder="Date of your trip" required />
+					<span class="help-block" ng-messages="newTrip.date.$error"
+						ng-show="!newTrip.date.$valid && newTrip.date.$dirty">
+						<span ng-message="required">Date is required</span>
+					</span>
+				</div>
+			</div>
+			<div class="col-md-4" ng-class="{'has-error': !newTrip.time.$valid && newTrip.time.$dirty}">
+				<div class="form-group">
+					<label for="time">Time</label>
+					<input type="time" name="time" ng-model="trip.time" 
+						class="form-control" placeholder="Time of your trip" required />
+					<span class="help-block" ng-messages="newTrip.time.$error"
+						ng-show="!newTrip.time.$valid && newTrip.time.$dirty">
+						<span ng-message="required">Time is required</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-9">
+				<img holder data-src="holder.js/100%x450/text:Google Maps Here !" alt="">
+			</div>
+
+			<div class="col-md-3">
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div text-angular name="description" ng-model="trip.description" class="trips-new-description"></div>
+			</div>
+		</div>
+	</form>
+
+</div>
