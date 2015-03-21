@@ -10,8 +10,10 @@
         .module('myApp')
         .controller('TripsNewController', TripsNewController);
 
-    function TripsNewController($scope, TripsService) {
+    function TripsNewController($scope, $state, TripsService) {
         
+    	$scope.add = add;
+
     	$scope.trip = {
     		_id: 0,
 		    title: "",
@@ -19,15 +21,21 @@
 		    location: "",
 		    date: "",
 		    time: "",
-		    center: { latitude: 120, longitude: 120
-		    },
+		    participants: [],
+		    center: {},
 		    zoom: 10,
-		    markers: [ { latitude: 120, longitude: 120 } ]
+		    markers: []
     	};
 
         ////////////
 
-
+        function add() {
+        	TripsService
+        		.add($scope.trip)
+        		.then(function(response) {
+        			$state.go("tripsdetail", { tripID: response.data._id });
+        		});
+        };
 
     }
 
