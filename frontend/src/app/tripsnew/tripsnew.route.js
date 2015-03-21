@@ -12,7 +12,7 @@
 
     function Routing($stateProvider) {
         $stateProvider
-            .state('tripsdetail', {
+            .state('tripsnew', {
                 url: '/trips/new',
                 templateUrl: 'app/tripsnew/tripsnew.html',
                 controller: 'TripsNewController'
