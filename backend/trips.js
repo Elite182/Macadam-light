@@ -55,7 +55,7 @@ function search(req, res) {
         filtered = trips;
     }
 
-    console.log("GET /trips " + filter.length + " results")
+    console.log("GET /trips " + filtered.length + " results")
     return res.json(200, filtered);
 };
 
@@ -83,7 +83,7 @@ function create(req, res) {
 
     trips.push(newtrip);
 
-    console.log("POST /trips -> 201 " + newTrips);
+    console.log("POST /trips -> 201 " + newtrip);
     return res.json(201, newtrip);
 };
 
