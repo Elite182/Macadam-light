@@ -1,0 +1,39 @@
+<div class="container trips-detail">
+	
+	<div class="row">
+		<div class="col-md-12">
+			<h1 ng-bind="trip.title" class="trips-detail-header"></h1>
+			<div class="trip-detail-locationdatetime">
+				<span ng-bind="trip.location"></span>, le <span ng-bind="trip.date"></span> à <span ng-bind="trip.time"></span>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-12">
+			<img data-src="holder.js/100%x350/text:Google Maps Here !" alt="">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-8">
+			<div ng-bind="trip.description" class="trips-detail-description"></div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="trip-details-participants">
+				<div>Particpants :</div>
+
+				<form>
+					<input type="text" />
+					<button>+</button>
+				</form>
+
+				<ul>
+					<li ng-repeat="participant in trip.participants" ng-bind="participant"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</div>
