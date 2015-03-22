@@ -12,7 +12,8 @@
             'ui.router',
             'ngMessages',
             'ngHolder',
-            'textAngular'
+            'textAngular',
+            'ng-sortable'
         ])
         .config(Config);
 

@@ -1,0 +1,10 @@
+<p> from the directive </p>
+<ul>
+	<li ng-repeat="marker in markers">
+		<span ng-bind="marker.label"></span>
+		<span ng-bind="marker.location.latitude"></span>
+		<span ng-bind="marker.location.longitude"></span>
+	</li>
+</ul>
+
+<div id="google-maps"></div>

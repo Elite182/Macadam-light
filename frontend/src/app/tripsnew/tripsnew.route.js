@@ -16,7 +16,7 @@
                 url: '/trips/new',
                 templateUrl: 'app/tripsnew/tripsnew.html',
                 controller: 'TripsNewController'
-        });
+            });
     }
 
 })();

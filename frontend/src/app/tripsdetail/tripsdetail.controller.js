@@ -9,7 +9,7 @@
         .module('myApp')
         .controller('TripsDetailController', TripsDetailController);
 
-    function TripsDetailController($scope, TripsService, $stateParams) {
+    function TripsDetailController($scope, $stateParams, TripsService) {
         
     	TripsService
     		.getByID($stateParams.tripID)

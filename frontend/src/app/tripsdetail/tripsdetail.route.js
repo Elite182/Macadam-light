@@ -16,7 +16,7 @@
                 url: '/trips/{tripID:int}',
                 templateUrl: 'app/tripsdetail/tripsdetail.html',
                 controller: 'TripsDetailController'
-        });
+            });
     }
 
 })();

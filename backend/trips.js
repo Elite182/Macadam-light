@@ -20,10 +20,10 @@ var trips = [{
     date: "2015-03-20",
     time: "15:00",
     participants: [ "julien", "clément F", "cédric", "clément N" ],
-    center: { latitude: 120.0, longitude: 120.0 },
+    center: { latitude: 48.7707452, longitude: 2.0803735 },
     zoom: 10,
     markers: [
-        { latitude: 120.0, longitude: 120.0 }
+        { label: "guyancourt", location: { latitude: 48.7707452, longitude: 2.0803735 } }
     ]
 }];
 var nextId = trips.length;

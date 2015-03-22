@@ -35,7 +35,7 @@
         		.then(function(response) {
         			$state.go("tripsdetail", { tripID: response.data._id });
         		});
-        };
+        }
 
     }
 
