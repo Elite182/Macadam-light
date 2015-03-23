@@ -36,13 +36,6 @@ h6 { font-size: 1em;    font-family: $header-font;}
 /* Ligne de séparation */
 hr { border-color: #b5b5b5;}
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
 /* Style boutons */
 .btn-outline {
     color: $first_color;

@@ -12,11 +12,17 @@
 
     function TripsController($scope, TripsService) {
         
-
+		search();
 
         ////////////
 
-
+		function search() {
+            TripsService
+                .search($scope.searchTrip)
+                .then(function(trips) {
+                    $scope.trips = trips;
+                });
+        }
 
     }
 

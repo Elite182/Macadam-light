@@ -1,9 +1,18 @@
 
 .trips-search {
-    padding-top: 20px;
     padding-bottom: 20px;
 
     .btn {
         height: 34px;
     }
+}
+
+.trips {
+
+	.trip {
+	
+		&:hover { background-color: $bold_gray; }
+		
+	}
+
 }
