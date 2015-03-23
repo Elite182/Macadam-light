@@ -1,33 +1,98 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
     font-family: $text-font;
     font-size: $font-size-base;
-    font-weight: 400;
+    font-weight: 100;
+	
+	margin-bottom: $footer_height;
+    
+    background-color: $body-bg;
+	
+	/* Définition de la police du site */
+    font-family: $text-font;
+
+    
+    /* zone de remplissage */
+    .content {
+        min-height: 200px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
 }
 
-a {
-    color: $brand-primary;
-    
-    transition-duration: $default-transition-duration;
+/* Définition des styles des titres */
+h1 { font-size: 4em;    font-family: $header-font;}
+h2 { font-size: 3em;    font-family: $header-font;}
+h3 { font-size: 2.5em;  font-family: $header-font; }
+h4 { font-size: 2em;    font-family: $header-font;}
+h5 { font-size: 1.5em;  font-family: $header-font;}
+h6 { font-size: 1em;    font-family: $header-font;}
 
-    &:focus,
-    &:visited {
-        color: $brand-primary;
-    }
+
+/* Ligne de séparation */
+hr { border-color: #b5b5b5;}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Style boutons */
+.btn-outline {
+    color: $first_color;
+    background-color: transparent;
+    border: 1px solid;
+    border-color: $first_color;
+    font-weight: bold;
 
     &:hover {
-        color: $text-hover-color;
-    }
-
-    &:hover,
-    &:focus,
-    &:visited {
-        text-decoration: none,
+        color: $second_color;
+        text-shadow: none;
+        background-color: $first_color;
+        border-color: $first_color;
     }
 }
 
-* {
-    &.active,
-    &:focus {
-        outline: none !important;
+.btn-outline-inverse {
+    color: $second_color;
+    background-color: transparent;
+    border: 1px solid;
+    border-color: $second_color;
+    font-weight: bold;
+
+    &:hover {
+        color: $first_color;
+        text-shadow: none;
+        background-color: $second_color;
+        border-color: $second_color;
+    }
+}
+
+/* Zone de texte */
+.white-panel {
+    padding: 20px 20px 15px 20px;
+    margin-bottom: 20px;
+    
+    background-color: #fff;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+
+    .white-panel-section {
+        margin-bottom: 40px;
+
+        .white-panel-header {
+            margin-bottom: 20px;
+        }
+
+        .white-panel-content {
+
+        }
     }
 }
