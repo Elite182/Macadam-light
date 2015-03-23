@@ -22,7 +22,7 @@
 		    location: "",
 		    date: "",
 		    time: "",
-		    participants: [],
+		    riders: [],
 		    center: null,
 		    zoom: null,
 		    markers: []
