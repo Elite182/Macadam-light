@@ -4,19 +4,23 @@ $screen-xs: 480px;
 $screen-sm: 768px;
 $screen-md: 992px;
 $screen-lg: 1200px;
-$text-color: #333;
-$body-bg: #fff;
+
 $border-radius-base: 0;
 $border-radius-large: 0;
 $border-radius-small: 0;
-$brand-primary: #337ab7;
-$text-hover-color: #555;
 
+$first_color:#333;
+$second_color: #f1f1f1;
+$brand-primary: #337ab7;
+
+$light_gray:  #c4c4c4;
+$bold_gray: #9a9a9a;
+$body-bg: $second_color;
 
 // Fonts
-$text-font: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$header-font: 'Roboto Condensed', Helvetica, Arial, sans-serif;
-
+$text-font: 'Open Sans', sans-serif;
+$header-font: 'Open Sans', sans-serif;
 
 // Animation
 $default-transition-duration: .3s;
+$footer_height: 400px;

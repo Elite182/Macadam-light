@@ -1,0 +1,45 @@
+
+@import "Variables";
+
+.footer 
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    background: url("../assets/images/Footer/footer-small-background.jpg") no-repeat center bottom;
+    background-size: auto 100%;
+    height: $footer_height;
+
+    padding-top: 50px;
+    color: $second_color;
+
+    @media screen and (min-width: $screen-md) {
+        background: url("../assets/images/Footer/footer-medium-background.png") no-repeat center bottom;
+        background-size: 100% auto;
+    }
+
+    @media screen and (min-width: $screen-lg) {
+        background: url("../assets/images/Footer/footer-large-background.png") no-repeat center bottom;
+        background-size: 100% auto;
+    }
+	
+    li { 
+        list-style: none; 
+        font-size: 1.5em;
+        i {
+            margin-right: 20px; 
+            text-align: center;
+        }
+    }
+
+    h2 { font-weight: bold; }
+
+    .footer-coypright{
+        margin-top: 50px;
+        font-size: 2em;
+        font-weight: bold;
+        text-align: center;
+
+    }
+}
