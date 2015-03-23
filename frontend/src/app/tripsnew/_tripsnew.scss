@@ -1,27 +1,74 @@
 /* Editor styling */
 
+#google-maps {
+	height: 450px;
+}
 
-.trips-new-description {
-	.ta-toolbar {
+.trips-new {
+
+	.trips-new-markers {
+
+		height: 450px;
 		
-		padding: 10px 10px 5px;
-		margin: 10px 0px; /* Override bootstrap */
-		
-		background-color: #F0F0F0;
+		overflow: auto;
 
-		border: 1px solid #EEE;
+		.panel-body {
+			padding: 0;
+		}
 
-		.btn-group {
-			margin-bottom: 5px;
+		.list-group-item {
+			
+			border-left: none;
+			border-right: none;
+
+			&:first-child {
+				border-top: none;
+			}
 		}
 	}
+	
+	.drag-handle {
 
-	.ta-editor {
-		padding: 10px;
+		display: inline-block;
+
+		margin-right: 10px;
+
+		font: bold 20px Sans-Serif;
+		color: #5F9EDF;
 		
-		background-color: #FFF;
+		cursor: move;
+		cursor: -webkit-grabbing;
+	}
+
+
+	.trips-new-description {
 		
-		border: 1px solid #EEE;
+		margin-bottom: 20px;
+
+		background-color: #fff;
+
+		border: 1px solid #ddd;
+
+
+		.ta-toolbar {
+			
+			padding: 10px 5px;
+			margin: 0; /* Override bootstrap */
+			
+			color: #333333;
+			background-color: #f5f5f5;
+
+			border-bottom: 1px solid #ddd;
+
+			.btn-group {
+				margin-bottom: 5px;
+			}
+		}
+
+		.ta-editor {
+			padding: 0;
+
+			border: none;
+		}
 	}
 }
-	

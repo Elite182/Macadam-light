@@ -13,6 +13,7 @@
     function TripsNewController($scope, $state, TripsService) {
         
     	$scope.add = add;
+        $scope.enoughMarkers = enoughMarkers;
 
     	$scope.trip = {
     		_id: 0,
@@ -22,8 +23,8 @@
 		    date: "",
 		    time: "",
 		    participants: [],
-		    center: {},
-		    zoom: 10,
+		    center: null,
+		    zoom: null,
 		    markers: []
     	};
 
@@ -37,6 +38,9 @@
         		});
         }
 
+        function enoughMarkers() {
+            return ($scope.trip.markers.length > 1);
+        }
     }
 
 })();

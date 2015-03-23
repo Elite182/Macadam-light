@@ -63,15 +63,19 @@
 			</div>
 
 			<div class="col-md-3">
-				<span ng-bind="trip.zoom"></span>x
-				<span ng-bind="trip.center.latitude"></span>
-				<span ng-bind="trip.center.longitude"></span>
-
-				<ul ng-sortable="{animation:150}" class="list-group">
-					<li ng-repeat="marker in trip.markers" class="list-group-item">
-						<span ng-bind="marker.label"></span>
-					</li>
-				</ul>
+				<div class="panel panel-default trips-new-markers">
+					<div class="panel-heading">
+						<div class="panel-title">Markers</div>
+					</div>
+					<div class="panel-body">
+						<ul ng-sortable="{animation:150, handle: '.drag-handle'}" class="list-group">
+							<li ng-repeat="marker in trip.markers" class="list-group-item">
+								<span class="drag-handle">☰</span>
+								<span ng-bind="marker.label"></span>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -82,7 +86,10 @@
 		</div>
 
 		<div class="pull-right">
-			<button type="submit" class="btn btn-success" ng-disabled="!newTrip.$valid">Save</button>
+			<button type="submit" class="btn btn-success" 
+					ng-disabled="!newTrip.$valid || !enoughMarkers() || trip.description.length == 0">
+				Save
+			</button>
 			<a ui-sref="trips" class="btn btn-default">Cancel</a>
 		</div>
 		

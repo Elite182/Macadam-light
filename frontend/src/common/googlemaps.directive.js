@@ -33,11 +33,14 @@
 			var abort = false;
 
 			GoogleMapsInitializer.mapsInitialized.then(function() {
-/*
+
 	            if (scope.center == null) {
-	            	geoLocate();
+	            	scope.center = { latitude: 48.7707452, longitude: 2.0803735 };
 	            }
-*/
+	            if (scope.zoom == null) {
+					scope.zoom = 10;
+	            }
+
 				directionsDisplay = new google.maps.DirectionsRenderer({
 	                draggable: true
 	            });
@@ -72,9 +75,11 @@
 			 * Response to a click event, add a new waypoint
 			 */
 	        function placeMarker(e) {
-	        	scope.$apply(function() {
-                	scope.markers.push({ location: normalizeFromLatLng(e.latLng) });
-                });
+	        	if (scope.markers.length < 10) {
+	        		scope.$apply(function() {
+	                	scope.markers.push({ location: normalizeFromLatLng(e.latLng) });
+	                });
+	        	}	
 	        }
 
 	        /**
