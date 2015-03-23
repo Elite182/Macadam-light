@@ -41,8 +41,10 @@
 					scope.zoom = 10;
 	            }
 
+	            var editable = (scope.editable == "true");
+
 				directionsDisplay = new google.maps.DirectionsRenderer({
-	                draggable: true
+	                draggable: editable
 	            });
 
 				directionsService = new google.maps.DirectionsService();
@@ -57,7 +59,7 @@
 	            google.maps.event.addListener(map, 'center_changed', updateCenter);
 	            google.maps.event.addListener(map, 'zoom_changed', updateZoom);
 
-	            if (scope.editable) {
+	            if (editable) {
 	            	google.maps.event.addListener(map, 'click', placeMarker);
 		            google.maps.event.addListener(directionsDisplay, 'directions_changed', updateMarkers);
 	            }

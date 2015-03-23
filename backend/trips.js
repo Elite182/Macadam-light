@@ -9,6 +9,7 @@ router.get('/', search);
 router.get('/:id', getByID);
 router.post('/', create);
 router.delete('/:id', destroy);
+router.post('/:id/riders', addRider);
 
 
 // Init model
@@ -19,11 +20,12 @@ var trips = [{
     location: "Ile-de-France",
     date: "2015-03-20",
     time: "15:00",
-    participants: [ "julien", "clément F", "cédric", "clément N" ],
+    riders: [ "julien", "clément F", "cédric", "clément N" ],
     center: { latitude: 48.7707452, longitude: 2.0803735 },
     zoom: 10,
     markers: [
-        { label: "guyancourt", location: { latitude: 48.7707452, longitude: 2.0803735 } }
+        { label: "guyancourt", location: { latitude: 48.7707452, longitude: 2.0803735 } },
+        { label: "guyancourt 2", location: { latitude: 48.7807452, longitude: 2.0823735 } }
     ]
 }];
 var nextId = trips.length;
@@ -104,5 +106,25 @@ function destroy(req, res) {
     }
 
     console.log("DELETE /trips/:id id=" + _id + " -> 404");
+    return res.send(404);
+};
+
+function addRider(req, res) {
+    var _id = parseInt(req.params.id);
+
+    var rider = req.body;
+
+    for (var i = 0; i < trips.length; i++) {
+        var trip = trips[i];
+
+        if (_id === trip._id) {
+            trip.riders.push(rider.name);
+
+            console.log("POST /trips/:id/riders id=" + _id + " -> 204");
+            return res.send(204);
+        }
+    }
+
+    console.log("POST /trips/:id/riders id=" + _id + " -> 404");
     return res.send(404);
 };

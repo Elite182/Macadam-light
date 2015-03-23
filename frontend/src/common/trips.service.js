@@ -17,7 +17,8 @@
             search: search,
             getByID: getByID,
             add: add,
-            removeById: removeById
+            removeById: removeById,
+            addRider: addRider
         };
 
         return factory;
@@ -58,6 +59,10 @@
 
         function removeById(_id) {
             return $http.delete(BASE_URL + '/' + _id);
+        }
+
+        function addRider(_id, rider) {
+            return $http.post(BASE_URL + '/' + _id + '/riders', rider);
         }
     }
 

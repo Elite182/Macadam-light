@@ -11,6 +11,11 @@
 
     function TripsDetailController($scope, $stateParams, TripsService) {
         
+        $scope.addRider = addRider;
+
+        $scope.trip = {};
+        $scope.rider = null;
+
     	TripsService
     		.getByID($stateParams.tripID)
     		.then(function (trip) {
@@ -22,6 +27,15 @@
 
         ////////////
 
+        function addRider() {
+            TripsService
+                .addRider($scope.trip._id, { name: $scope.rider })
+                .then(function() {
+                    $scope.trip.riders.push($scope.rider);
+                    $scope.rider = null;
+                    $scope.addRiderForm.rider.$dirty = false;
+                });
+        }
 
     }
 

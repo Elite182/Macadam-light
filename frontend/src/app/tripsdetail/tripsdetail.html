@@ -5,7 +5,7 @@
 			<!-- <a ui-sref="trips"><i class="glyphicon glyphicon-chevron-left"></i></a> -->
 			<h1 ng-bind="trip.title" class="trips-detail-header"></h1>
 			<div class="trip-detail-locationdatetime">
-				<span ng-bind="trip.location"></span>, le <span ng-bind="trip.date"></span> à <span ng-bind="trip.time"></span>
+				<i class="fa fa-calendar"></i> <span ng-bind="trip.location"></span>, le <span ng-bind="trip.date"></span> à <span ng-bind="trip.time"></span>
 			</div>
 		</div>
 	</div>
@@ -18,21 +18,42 @@
 
 	<div class="row">
 		<div class="col-md-8">
-			<div ng-bind-html="trip.description" class="trips-detail-description"></div>
+			<div class="panel panel-default trips-detail-description">
+				<div class="panel-body">
+					<div ng-bind-html="trip.description"></div>
+				</div>
+			</div>
 		</div>
 
 		<div class="col-md-4">
-			<div class="trip-details-participants">
-				<div>Particpants :</div>
+			<div class="panel panel-default trip-details-riders">
+				<div class="panel-heading">
+					<div class="panel-title">Particpants</div>
+				</div>
+				<div class="panel-body">
+					<form name="addRiderForm" ng-submit="addRider()" novalidate>
+						<div class="form-group" ng-class="{'has-error': !addRiderForm.rider.$valid && addRiderForm.rider.$dirty}">
+							<div class="input-group input-group-sm">
+								<input type="text" name="rider" class="form-control" placeholder="Your name !" 
+										ng-model="rider" ng-minlength="3" required/>
+								<span class="input-group-btn">
+									<button class="btn btn-default" ng-disabled="!addRiderForm.$valid">
+										<i class="fa fa-user-plus"></i>
+									</button>
+								</span>
+							</div>
+							<span class="help-block" ng-messages="addRiderForm.rider.$error"
+								ng-show="!addRiderForm.rider.$valid && addRiderForm.rider.$dirty">
+								<span ng-message="required">Your name is required</span>
+								<span ng-message="minlength">Your name must be at least 3 characters</span>
+							</span>
+						</div>
+					</form>
 
-				<form>
-					<input type="text" />
-					<button>+</button>
-				</form>
-
-				<ul>
-					<li ng-repeat="participant in trip.participants" ng-bind="participant"></li>
-				</ul>
+					<ul class="list-riders">
+						<li ng-repeat="rider in trip.riders" ng-bind="rider"></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
