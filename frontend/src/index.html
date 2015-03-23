@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html>
+<html class="no-js" ng-app="myApp">
 
 <head>
     <meta charset="utf-8">
@@ -31,7 +31,7 @@
     <!-- endbuild -->
 </head>
 
-<body data-spy="scroll" data-target="#navbar-list">
+<body>
     <!--[if lt IE 10]>
 		<p class="browsehappy">
 			You are using an <strong>outdated</strong> browser. 
@@ -78,7 +78,7 @@
 	</div>
 		
 	<!-- ============== CONTENU ================= -->
-	<div class="container content">
+	<div class="container content"  ui-view>
 	
 	</div>
 	
@@ -128,6 +128,7 @@
 
 	<!-- ===== INJECTION DES SCRIPTS JAVASCRIPT ===== -->
     <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+	<script src="index.js"></script>
     <!-- inject:js -->
 		<!-- js files will be automaticaly insert here -->
     <!-- endinject -->

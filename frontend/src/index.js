@@ -6,7 +6,6 @@
 (function() {
     'use strict';
 
-
     angular
         .module('myApp', [
             'ui.router',
@@ -18,7 +17,8 @@
         .config(Config);
 
     function Config($urlRouterProvider) {
-    	
+		// Default root at startup
+    	$urlRouterProvider.otherwise("/trips");
     }
 
 })();
