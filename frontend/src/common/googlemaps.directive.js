@@ -33,7 +33,6 @@
 			var abort = false;
 
 			GoogleMapsInitializer.mapsInitialized.then(function() {
-	            var $map = $('#google-maps').get();
 /*
 	            if (scope.center == null) {
 	            	geoLocate();
@@ -45,7 +44,7 @@
 
 				directionsService = new google.maps.DirectionsService();
 
-	            map = new google.maps.Map($map[0], {
+	            map = new google.maps.Map(element.children('#google-maps')[0], {
 	                zoom: scope.zoom,
 	                center: normalizeToLatLng(scope.center)
 	            });
@@ -60,24 +59,22 @@
 		            google.maps.event.addListener(directionsDisplay, 'directions_changed', updateMarkers);
 	            }
 
-	            scope.$watch('markers', function() {
+	            scope.$watchCollection('markers', function() {
 	            	if (abort) {
 	            		abort = false;
 	            	} else {
 	            		refreshDirections();
 	            	}
 	            });
-
-	            //refreshDirections();
 	        });
 
 			/**
 			 * Response to a click event, add a new waypoint
 			 */
 	        function placeMarker(e) {
-	        	scope.markers.push({ location: normalizeFromLatLng(e.latLng) });
-
-	        	refreshDirections();
+	        	scope.$apply(function() {
+                	scope.markers.push({ location: normalizeFromLatLng(e.latLng) });
+                });
 	        }
 
 	        /**

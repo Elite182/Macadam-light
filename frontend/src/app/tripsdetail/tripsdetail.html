@@ -12,35 +12,13 @@
 	
 	<div class="row">
 		<div class="col-md-12">
-			<Google-maps zoom="trip.zoom" center="trip.center" markers="trip.markers" editable="{{ true }}"></Google-maps>
+			<Google-maps zoom="trip.zoom" center="trip.center" markers="trip.markers" editable="{{ false }}"></Google-maps>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col-md-8">
-			<span ng-bind="trip.zoom"></span>x
-			<span ng-bind="trip.center.latitude"></span>
-			<span ng-bind="trip.center.longitude"></span>
-
 			<div ng-bind-html="trip.description" class="trips-detail-description"></div>
-
-			<ul ng-sortable="{animation:150}">
-				<li ng-repeat="marker in trip.markers">
-					<span ng-bind="marker.label"></span>
-					<span ng-bind="marker.location.latitude"></span>
-					<span ng-bind="marker.location.longitude"></span>
-				</li>
-			</ul>
-
-			<hr />
-
-			<ul>
-				<li ng-repeat="marker in trip.markers">
-					<span ng-bind="marker.label"></span>
-					<span ng-bind="marker.location.latitude"></span>
-					<span ng-bind="marker.location.longitude"></span>
-				</li>
-			</ul>
 		</div>
 
 		<div class="col-md-4">

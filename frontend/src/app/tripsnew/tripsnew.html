@@ -59,11 +59,19 @@
 		
 		<div class="row">
 			<div class="col-md-9">
-				<img holder data-src="holder.js/100%x450/text:Google Maps Here !" alt="">
+				<Google-maps zoom="trip.zoom" center="trip.center" markers="trip.markers" editable="{{ true }}"></Google-maps>
 			</div>
 
 			<div class="col-md-3">
-				
+				<span ng-bind="trip.zoom"></span>x
+				<span ng-bind="trip.center.latitude"></span>
+				<span ng-bind="trip.center.longitude"></span>
+
+				<ul ng-sortable="{animation:150}" class="list-group">
+					<li ng-repeat="marker in trip.markers" class="list-group-item">
+						<span ng-bind="marker.label"></span>
+					</li>
+				</ul>
 			</div>
 		</div>
 
