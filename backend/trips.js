@@ -20,6 +20,20 @@ var trips = [{
     location: "Ile-de-France",
     date: "2015-03-20",
     time: "15:00",
+    riders: [ "julien", "clément F", "cédric"],
+    center: { latitude: 48.7707452, longitude: 2.0803735 },
+    zoom: 10,
+    markers: [
+        { label: "guyancourt", location: { latitude: 48.7707452, longitude: 2.0803735 } },
+        { label: "guyancourt 2", location: { latitude: 48.7807452, longitude: 2.0823735 } }
+    ]
+},{
+    _id: 1,
+    title: "JCCC",
+    description: "A JCCC production !",
+    location: "Ile-de-France",
+    date: "2015-03-26",
+    time: "15:00",
     riders: [ "julien", "clément F", "cédric", "clément N" ],
     center: { latitude: 48.7707452, longitude: 2.0803735 },
     zoom: 10,

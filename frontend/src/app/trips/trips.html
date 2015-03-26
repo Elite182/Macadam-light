@@ -1,50 +1,60 @@
 
 	<!-- ============== SEARCH BAR ================= -->
     <section class="trips-search">
-        <div class="container">
-			<div class="row">
-				<div class="input-group col-md-8 col-md-offset-2">
+		<div class="row">
+			<div class="input-group col-xs-8 col-md-8 col-xs-offset-2 col-md-offset-2">
+				<span class="input-group-addon">
+					<i class="fa fa-search"></i>
+				</span>
+				<input type="text" class="form-control" name="searchTrip" ng-model="searchTrip" placeholder="Rechercher" />
 				
-					<span class="input-group-addon">
-						<i class="fa fa-search"></i>
-					</span>
-					<input type="text" class="form-control" name="searchTrip" ng-model="searchTrip" placeholder="Rechercher" />
-					
-					<div class="input-group-btn">
-						<a ui-sref="tripsnew" class="btn btn-default">
-							<i class="fa fa-plus"></i>
-						</a>
-					</div>
+				<div class="input-group-btn">
+					<a ui-sref="tripsnew" class="btn btn-default">
+						<i class="fa fa-plus"></i>
+					</a>
 				</div>
 			</div>
         </div>
     </section>
 	
 	<!-- ============== LISTE DES BALADES ================= -->
-	<section class="trips" ng-repeat="trip in filteredTrips=(trips | filter:searchTrip)">
-		<div class="trip container">
-			<div class="row" ui-sref="tripsdetail({tripID: trip._id})">
-				<div class="col-md-2">
-					<img holder data-src="holder.js/150x150/text:Photo"/>
+	<section ng-repeat="trip in filteredTrips=(trips | filter:searchTrip)">
+		<div class="row Trip-item" ui-sref="tripsdetail({tripID:trip._id})">
+			<!-- Icone de la balade -->
+			<div class="col-xs-4 col-md-1">
+				<div class="Trip-picture">
+					<img holder data-src="holder.js/60x40"/>
 				</div>
-				<div class="col-md-8">
-					<div class="row">
-						<div class="col-md-6">
-							<h2 ng-bind="trip.title"></h2>
-						</div>
-						<div class="col-md-6">
-							<span ng-bind="trip.riders.length"></span>
-							<span>Participant</span>
-						</div>
+			</div>
+
+			<!-- Informations -->
+			<div class="col-xs-8 col-md-11">
+
+				<!-- Ligne d'information principale -->
+				<div class="row">
+					<div class="col-xs-6 col-md-10">
+						<h4 class="Trip-name" ng-bind="trip.title"></h4>
 					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<p ng-bind="trip.description"></p>
-						</div>
-						<div class="col-md-6">
-							<span ng-bind="trip.location"></span>
-							<span ng-bind="trip.date"></span>
-						</div>
+					<div class="col-xs-6 col-md-2">
+						<p class="Trip-part">
+							<b><span ng-bind="trip.riders.length"></span></b>
+							Participant(s)
+						</p>
+					</div>
+				</div>
+				
+				<!-- Ligne cachée -->
+				<div class="row Trip-info">
+					<hr/>
+					<div class="col-xs-8 col-md-8">
+						<p class="Trip-desc" ng-bind="trip.description"></p>
+					</div>
+					<div class="col-xs-4 col-md-4">
+						<p class="Trip-rdv">
+							<span class="Trip-loc" ng-bind="trip.location"/>
+							 |  
+							<span class="Trip-date" ng-bind="trip.date"/>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -52,9 +62,8 @@
 	</section>
 	
 	<!-- ============== PAGINATION ================= -->
-	<section class="container">
-	
-		<nav class="col-md-offset-4 col-md-4">
+	<section class="Nav">
+		<nav class="col-md-4 col-md-offset-4 ">
 		  <ul class="pagination">
 			<li>
 			  <a href="#" aria-label="Previous">
@@ -64,8 +73,6 @@
 			<li><a href="#">1</a></li>
 			<li><a href="#">2</a></li>
 			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
 			<li>
 			  <a href="#" aria-label="Next">
 				<span aria-hidden="true">&raquo;</span>
@@ -73,15 +80,4 @@
 			</li>
 		  </ul>
 		</nav>
-	
 	</section>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
