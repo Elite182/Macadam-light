@@ -36,7 +36,7 @@ var TripSchema = new mongoose.Schema({
     }]
 });
 
-var Trip = mongoose.model('Thing', TripSchema);
+var Trip = mongoose.model('Trips', TripSchema);
 
 
 module.exports = router;
