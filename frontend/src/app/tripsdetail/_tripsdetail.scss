@@ -12,11 +12,17 @@
 		li {
 			list-style: none;
 
-            &:before {
-                font-family: FontAwesome;
-                content: "\f21c";
+			font-size: 1.2em;
 
-                padding-right: 10px;
+			i {
+				margin-right: 10px;
+			}
+
+            &:hover {
+            	i {
+            		transform: rotate(-45deg);
+            		transition: 0.5s;
+            	}
             }
 		}
 	}

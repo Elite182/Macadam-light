@@ -29,7 +29,7 @@
 
         function addRider() {
             TripsService
-                .addRider($scope.trip._id, { name: $scope.rider })
+                .addRider($scope.trip._id, { rider: $scope.rider })
                 .then(function() {
                     $scope.trip.riders.push($scope.rider);
                     $scope.rider = null;

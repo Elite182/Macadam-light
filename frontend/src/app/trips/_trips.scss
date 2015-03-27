@@ -7,81 +7,8 @@
     }
 }
 
-.Trip-item {
-
-    $item_height: 50px;
-    $item_padding: 5px;
-    $item_transition_duration: 0.8s;
-    $item_margin: 5px;
-
-    $text-info_size: 1.3em;
-    $base_color: #d6d6d6;
-    $hover_color: #c4c4c4;
-
-    /* Style générale */
-    border-radius: 5px;
-    background-color: $base_color;
-    padding: $item_padding 0;
-    cursor: pointer;
-    height: $item_height;
-    transition: $item_transition_duration;
-    margin: $item_margin 0;
-
-    a { color: $first_color; }
-    hr { margin: 3px;}
-
-    .Trip-picture {
-        img {
-            display: block;
-            margin: 0;
-        }
-    }
-
-    .Trip-name {
-        margin: 0;
-        line-height: $item_height - $item_padding*2;
-    }
-
-    .Trip-part {
-        margin: 0;
-        line-height: $item_height - $item_padding*2;
-        text-align:center;
-    }
-
-    .Trip-info {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height $item_transition_duration;
-    }
-
-    .Trip-desc {
-        margin: 0;
-        line-height: $item_height - $item_padding*2;
-        font-size: $text-info_size;
-    }
-    
-    .Trip-rdv {
-        margin: 0;
-        text-align: center;
-        line-height: $item_height - $item_padding*2;
-    }
-
-    .Trip-loc {
-
-    }
-
-    .Trip-date {
-    }
-
-    /* Survol de l'item */
-    &:hover {
-        
-        height: $item_height*2;
-        background-color: $hover_color;
-        transition: $item_transition_duration;
-
-        .Trip-info {
-            max-height: $item_height;
-        }
+.trip-extra-links {
+    div:not(:first-child) {
+        margin-top: 5px;
     }
 }

@@ -51,7 +51,10 @@
 					</form>
 
 					<ul class="list-riders">
-						<li ng-repeat="rider in trip.riders" ng-bind="rider"></li>
+						<li ng-repeat="rider in trip.riders">
+							<i class="fa fa-motorcycle"></i>
+							<span ng-bind="rider"></span>
+						</li>
 					</ul>
 				</div>
 			</div>

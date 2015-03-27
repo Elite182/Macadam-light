@@ -15,6 +15,7 @@
 
         var factory = {
             search: search,
+            count: count,
             getByID: getByID,
             add: add,
             removeById: removeById,
@@ -25,21 +26,42 @@
 
         ////////////
 
-        function search(searchText) {
-            var config;
+        function prepareSearch(searchText) {
+            var config = {
+                params: {
+                    
+                }
+            };
 
             if (searchText) {
-                config = {
-                    params: {
-                        search: searchText
-                    }
+                config.params = {
+                    search: searchText
                 };
-            } else {
-                config = {};
             }
 
+            return config;
+        }
+
+        function search(searchText, page, number) {
+            var config = prepareSearch(searchText);
+
+            if (page && number) {
+                config.params.page = page;
+                config.params.number = number;
+            }
+            
             return $http
                 .get(BASE_URL, config)
+                .then(function(response) {
+                    return response.data;
+                });
+        }
+
+        function count(searchText) {
+            var config = prepareSearch(searchText);
+
+            return $http
+                .get(BASE_URL + '/count', config)
                 .then(function(response) {
                     return response.data;
                 });

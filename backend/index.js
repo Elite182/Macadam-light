@@ -13,7 +13,7 @@ var bodyParser = require('body-parser'),
 
 
 // Connect to database
-//mongoose.connect('mongodb://localhost/postagram');
+mongoose.connect('mongodb://localhost/macadam');
 
 
 // Configure express
@@ -26,11 +26,9 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(errorHandler()); // Error handler - has to be last
 
-// Routing
-app.use('/trips', require('./trips.js'));
 
 // Routing
-//app.use('/articles', require('./article.js'));
+app.use('/trips', require('./api/trips.js'));
 
 
 // Start server

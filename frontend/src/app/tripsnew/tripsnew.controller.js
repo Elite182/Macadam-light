@@ -16,7 +16,6 @@
         $scope.enoughMarkers = enoughMarkers;
 
     	$scope.trip = {
-    		_id: 0,
 		    title: "",
 		    description: "",
 		    location: "",
